@@ -1,1 +1,1 @@
-web: Bot
+web: appswebcommand
