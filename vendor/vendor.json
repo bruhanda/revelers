@@ -1,6 +1,33 @@
 {
 	"comment": "",
 	"ignore": "test",
-	"package": [],
+	"package": [
+		{
+			"checksumSHA1": "LoOJ8FHhWFVyMYG+9cK1c/rap88=",
+			"path": "github.com/miguelmota/go-coinmarketcap",
+			"revision": "e00de19824685f93438077caef04f7a3d0f8bc4c",
+			"revisionTime": "2017-09-17T04:17:34Z"
+		},
+		{
+			"checksumSHA1": "t8jzPFIv4DNACv+cuZoigNmjPLQ=",
+			"path": "github.com/technoweenie/multipartstreamer",
+			"revision": "a90a01d73ae432e2611d178c18367fbaa13e0154",
+			"revisionTime": "2013-10-20T00:18:33Z"
+		},
+		{
+			"checksumSHA1": "JaRjqSc0lOpA0V7avHWBex1IY+w=",
+			"path": "gopkg.in/telegram-bot-api.v4",
+			"revision": "2022d04b94f50056a09962b1ac81cdd821d20a55",
+			"revisionTime": "2017-11-09T18:51:50Z"
+		},
+		{
+			"path": "log",
+			"revision": ""
+		},
+		{
+			"path": "strconv",
+			"revision": ""
+		}
+	],
 	"rootPath": "github.com/bruhanda/revelers"
 }
