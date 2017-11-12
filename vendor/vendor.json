@@ -1,6 +1,7 @@
 {
 	"comment": "",
 	"ignore": "test",
+	"goVersion":1.9,
 	"package": [
 		{
 			"checksumSHA1": "LoOJ8FHhWFVyMYG+9cK1c/rap88=",
