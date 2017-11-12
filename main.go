@@ -5,17 +5,26 @@ import (
 	"gopkg.in/telegram-bot-api.v4"
 	"fmt"
 	coinApi "github.com/miguelmota/go-coinmarketcap"
-
+	"os"
 	"strconv"
+	"net/http"
 )
 
 var mems = map[string]string{
-	"tvar":"Тварь",
-	"rostaturka":"Ростатурка",
-	"govno":"Гамно",
+	"tvar":       "Тварь",
+	"rostaturka": "Ростатурка",
+	"govno":      "Гамно",
+}
+
+func MainHandler(resp http.ResponseWriter, _ *http.Request) {
+	resp.Write([]byte("Hi there! I'm TelegramBot!"))
 }
 
 func main() {
+
+	http.HandleFunc("/", MainHandler)
+	go http.ListenAndServe(":"+os.Getenv("PORT"), nil)
+
 	bot, err := tgbotapi.NewBotAPI("490802103:AAEHiF4pl-Vw7ONSV7SEVlK9qoyg2xTFrU4")
 	if err != nil {
 		log.Panic(err)
@@ -55,7 +64,6 @@ func main() {
 			continue
 		}
 
-
 		fmt.Print(update.Message.Text)
 		fmt.Println(update.ChosenInlineResult)
 
@@ -64,7 +72,7 @@ func main() {
 		} else {
 
 			switch update.Message.Text {
-			case "/btc","/bitcoin":
+			case "/btc", "/bitcoin":
 				coinInfo, err := coinApi.GetCoinData("bitcoin")
 				if err != nil {
 					log.Println(err)
@@ -75,7 +83,7 @@ func main() {
 
 				}
 
-			case "/ltc","/litecoin":
+			case "/ltc", "/litecoin":
 				coinInfo, err := coinApi.GetCoinData("litecoin")
 				if err != nil {
 					log.Println(err)
@@ -85,7 +93,7 @@ func main() {
 					bot.Send(msg)
 
 				}
-			case "/nmc","/namecoin":
+			case "/nmc", "/namecoin":
 				coinInfo, err := coinApi.GetCoinData("namecoin")
 				if err != nil {
 					log.Println(err)
@@ -95,7 +103,7 @@ func main() {
 					bot.Send(msg)
 
 				}
-			case "/ppc","/peercoin":
+			case "/ppc", "/peercoin":
 				coinInfo, err := coinApi.GetCoinData("peercoin")
 				if err != nil {
 					log.Println(err)
@@ -105,7 +113,7 @@ func main() {
 					bot.Send(msg)
 
 				}
-			case "/nvc","/novacoin":
+			case "/nvc", "/novacoin":
 				coinInfo, err := coinApi.GetCoinData("novacoin")
 				if err != nil {
 					log.Println(err)
@@ -115,7 +123,7 @@ func main() {
 					bot.Send(msg)
 
 				}
-			case "/eth","/ethereum":
+			case "/eth", "/ethereum":
 				coinInfo, err := coinApi.GetCoinData("ethereum")
 				if err != nil {
 					log.Println(err)
@@ -125,7 +133,7 @@ func main() {
 					bot.Send(msg)
 
 				}
-			case "/bch","/bitcoin-cash":
+			case "/bch", "/bitcoin-cash":
 				coinInfo, err := coinApi.GetCoinData("bitcoin-cash")
 				if err != nil {
 					log.Println(err)
@@ -151,17 +159,13 @@ func main() {
 
 			case "/test":
 
+				msg := tgbotapi.NewChatAction(update.Message.Chat.ID, "test")
+				bot.Send(msg)
 
-					msg :=  tgbotapi.NewChatAction(update.Message.Chat.ID, "test")
-					bot.Send(msg)
-
-
-
-			default: fmt.Println("Неизвестная команда.")
+			default:
+				fmt.Println("Неизвестная команда.")
 
 			}
-
-
 
 		}
 

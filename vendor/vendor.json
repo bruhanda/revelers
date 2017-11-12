@@ -1,7 +1,7 @@
 {
 	"comment": "",
+	"goVersion": 1.9,
 	"ignore": "test",
-	"goVersion":1.9,
 	"package": [
 		{
 			"checksumSHA1": "LoOJ8FHhWFVyMYG+9cK1c/rap88=",
@@ -20,6 +20,14 @@
 			"path": "gopkg.in/telegram-bot-api.v4",
 			"revision": "2022d04b94f50056a09962b1ac81cdd821d20a55",
 			"revisionTime": "2017-11-09T18:51:50Z"
+		},
+		{
+			"path": "net/http",
+			"revision": ""
+		},
+		{
+			"path": "os",
+			"revision": ""
 		}
 	],
 	"rootPath": "github.com/bruhanda/revelers"
