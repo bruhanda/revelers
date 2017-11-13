@@ -17,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="486">
-              <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+              <caret line="27" column="81" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="81" />
               <folding>
                 <element signature="e#14#149#0" expanded="true" />
               </folding>
@@ -319,7 +319,7 @@
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <caret line="27" column="81" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="81" />
           <folding>
             <element signature="e#14#149#0" expanded="true" />
           </folding>

@@ -25,7 +25,7 @@ func main() {
 	http.HandleFunc("/", MainHandler)
 	go http.ListenAndServe(":"+os.Getenv("8080"), nil)
 
-	bot, err := tgbotapi.NewBotAPI("")
+	bot, err := tgbotapi.NewBotAPI("490802103:AAEHiF4pl-Vw7ONSV7SEVlK9qoyg2xTFrU4")
 	if err != nil {
 		log.Panic(err)
 	}
