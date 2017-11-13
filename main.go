@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 	"net/http"
-	"io/ioutil"
+	//"io/ioutil"
 )
 
 var mems = map[string]string{
@@ -23,7 +23,7 @@ func MainHandler(resp http.ResponseWriter, _ *http.Request) {
 
 
 func main() {
-
+    fmt.Print(os.Getenv("PORT"))
 	http.HandleFunc("/", MainHandler)
 	go http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 
