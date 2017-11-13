@@ -5,8 +5,10 @@ import (
 	"gopkg.in/telegram-bot-api.v4"
 	"fmt"
 	coinApi "github.com/miguelmota/go-coinmarketcap"
+	"os"
 	"strconv"
 	"net/http"
+	"io/ioutil"
 )
 
 var mems = map[string]string{
@@ -23,8 +25,7 @@ func MainHandler(resp http.ResponseWriter, _ *http.Request) {
 func main() {
 
 	http.HandleFunc("/", MainHandler)
-	go http.ListenAndServe(":8080", nil)
-
+	go http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 
 	bot, err := tgbotapi.NewBotAPI("490802103:AAEHiF4pl-Vw7ONSV7SEVlK9qoyg2xTFrU4")
 	if err != nil {
