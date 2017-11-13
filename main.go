@@ -5,7 +5,7 @@ import (
 	"gopkg.in/telegram-bot-api.v4"
 	"fmt"
 	coinApi "github.com/miguelmota/go-coinmarketcap"
-	"os"
+	//"os"
 	"strconv"
 	"net/http"
 	//"io/ioutil"
@@ -17,15 +17,17 @@ var mems = map[string]string{
 	"govno":      "Гамно",
 }
 
-func MainHandler(resp http.ResponseWriter, _ *http.Request) {
-	resp.Write([]byte("Hi there! I'm TelegramBot!"))
+func MainHandler(w http.ResponseWriter, _ *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Hi there! I'm TelegramBot!"))
 }
 
 
 func main() {
-    fmt.Print(os.Getenv("PORT"))
+    //fmt.Print(os.Getenv("8080"))
 	http.HandleFunc("/", MainHandler)
-	go http.ListenAndServe(":"+os.Getenv("PORT"), nil)
+	go http.ListenAndServe(":8080", nil)
 
 	bot, err := tgbotapi.NewBotAPI("490802103:AAEHiF4pl-Vw7ONSV7SEVlK9qoyg2xTFrU4")
 	if err != nil {
